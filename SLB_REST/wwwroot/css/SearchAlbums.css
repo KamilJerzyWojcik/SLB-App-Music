@@ -1,0 +1,19 @@
+﻿.marketing .result-search {
+    margin-bottom: 1.5rem;
+    text-align: center;
+    align-items: center;
+    line-height: 50%;
+
+}
+
+
+    .marketing .result-search p {
+        margin-right: .75rem;
+        margin-left: .75rem;
+    }
+
+
+
+.marketing h2 {
+    font-weight: 400;
+}

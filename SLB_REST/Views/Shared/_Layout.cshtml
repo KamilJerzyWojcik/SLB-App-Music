@@ -1,0 +1,72 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="Kamil Wójcik" content="website">
+
+
+    <title>SLB-Music</title>
+
+    <link href="~/lib/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link href="~/css/SearchAlbums.css" rel="stylesheet" />
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        @if (User.Identity.IsAuthenticated)
+        {
+            <a class="navbar-brand" asp-action="Albums" asp-controller="Home">
+                <img id="img-logo" src="~/img/logo.png" alt="logo" width="100" height="50" />
+            </a>
+        }
+        else
+        {
+            <a class="navbar-brand" asp-action="Login" asp-controller="Account">
+                <img id="img-logo" src="~/img/logo.png" alt="logo" width="100" height="50" />
+            </a>
+        }
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <a class="nav-link disabled badge badge-danger info-website" id="log-button" asp-action="LogOut" asp-controller="Account">Logout @User.Identity.Name <span class="sr-only">(current)</span></a>
+                    }
+                    else
+                    {
+                        <a class="nav-link badge badge-success info-website" id="log-button" asp-action="LogIn" asp-controller="Account">Login <span class="sr-only">(current)</span></a>
+                    }
+                </li>
+                <li>
+                    <a class="nav-link badge badge-secondary info-website" asp-action="Manual" asp-controller="Home">Manual</a>
+                </li>
+                <li>
+                    <a class="nav-link badge badge-primary info-website" asp-action="About" asp-controller="Home">About</a>
+                </li>
+
+            </ul>
+            @if (User.Identity.IsAuthenticated)
+            {
+                <form class="form-inline my-2 my-lg-0" method="get" asp-action="Albums" asp-controller="Discogs">
+                    <input name="queryUser" asp-controller="Home" class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+                </form>
+            }
+        </div>
+    </nav>
+    <script src="~/lib/jQuery/jquery-3.3.1.min.js"></script>
+    <script src="~/lib/bootstrap/js/popper.min.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.min.js"></script>
+
+    @RenderBody()
+
+
+</body>
+</html>

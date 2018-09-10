@@ -1,0 +1,50 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<main role="main" class="container">
+    <nav id="nav-edit">
+        <ul class="nav nav-tabs" id="@ViewBag.id">
+            <li class="nav-item">
+                <a class="nav-link active" href="#">Album</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Videos</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Images</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Artists</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Styles</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="#">Genres</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="row" id="youtube">
+        <div class="col-lg-4 col-md-3 col-sm-2"></div>
+
+        <div class="col-lg-4 col-md-6 col-sm-8" id="yt-edit">
+            <script src="~/js/ytApi.js"></script>
+        </div>
+        <div class="col-lg-4 col-md-3 col-sm-2"></div>
+    </div>
+    <div class="row" id="row-edit">
+
+    </div>
+
+    
+
+    
+
+</main>
+<script src="~/js/EditAlbum/editScript.js"></script>
+<script src="~/js/EditAlbum/editTags.js"></script>
+<script src="~/js/EditAlbum/EditImages.js"></script>
+<script src="~/js/EditAlbum/EditVideos.js"></script>
+<script src="~/js/EditAlbum/EditAlbum.js"></script>
+<script src="~/js/EditAlbum/EditAlbumThumb.js"></script>

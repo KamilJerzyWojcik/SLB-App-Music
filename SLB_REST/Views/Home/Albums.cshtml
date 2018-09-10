@@ -1,0 +1,57 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+<main role="main" class="container">
+    @if (!(TempData["delete"] is null))
+    {
+        <div class="alert alert-warning" id="confirm" role="alert">
+            @TempData["delete"]
+        </div>
+    }
+    @if (!(ViewBag.Start is null))
+    {
+        <div class="alert alert-info" id="confirm" role="alert">
+            @ViewBag.Start
+        </div>
+    }
+    <div class="album py-5 bg-light">
+        <div class="container">
+            <div class="row" id="albums-slb">
+            </div>
+        </div>
+    </div>
+    <nav aria-label="...">
+        <ul class="pagination" max="@ViewBag.max" page="0"></ul>
+    </nav>
+
+    <div class="row">
+        <div class="col-lg-2 col-md-3 col-sm-12">
+            <div class="row">
+                <div class="col-12" id="btn-back"></div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-8 col-sm-12">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="false"></div>
+            <div class="col-12" id="tracks-list"></div>
+        </div>
+        <div class="col-lg-4 col-md-12">
+            <div class="row">
+                <div class="col-lg-0 col-md-3 col-sm-0"></div>
+                <div class="col-lg-12 col-md-8 col-sm-12" id="yt">
+                    <script src="~/js/ytApi.js"></script>
+                </div>
+                <div class="col-lg-0 col-md-1 col-sm-0"></div>
+
+                <div class="col-12" id="videos-list">
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</main>
+<script src="~/js/SLBAlbums/AlbumsSLB.js"></script>
+<script src="~/js/SLBAlbums/SingleAlbumSLB.js"></script>
+<script src="~/js/DiscogsAlbums/Helpers.js"></script>
